@@ -1,12 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { experiences } from "@/data/portfolio";
 
 export function Experience() {
   // Toujours la première expérience sélectionnée au chargement de la page.
   const [selected, setSelected] = useState(0);
   const active = experiences[selected];
+  const frameRef = useRef<HTMLDivElement>(null);
+
+  const selectExperience = (index: number) => {
+    setSelected(index);
+    // Sur desktop, timeline et media sont côte à côte (voir la media query
+    // 820px dans globals.css) donc le scroll n'a pas lieu d'être : il ne sert
+    // qu'en mobile, où la media passe au-dessus de la timeline sélectionnée.
+    const isMobile = window.matchMedia("(max-width: 820px)").matches;
+    if (isMobile) {
+      frameRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+  };
 
   return (
     <section id="experience" className="section">
@@ -19,27 +31,27 @@ export function Experience() {
 
       <div className="xp-grid">
         <div className="timeline">
-          {experiences.map((xp, i) => {
-            const isSelected = i === selected;
+          {experiences.map((experience, index) => {
+            const isSelected = index === selected;
             return (
               <div
-                key={xp.dates}
+                key={experience.dates}
                 className={`tl-item${isSelected ? " is-selected" : ""}`}
                 role="button"
                 tabIndex={0}
                 aria-pressed={isSelected}
-                onClick={() => setSelected(i)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    e.preventDefault();
-                    setSelected(i);
+                onClick={() => selectExperience(index)}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    selectExperience(index);
                   }
                 }}
               >
-                <div className="dates">{xp.dates}</div>
-                <h3>{xp.poste}</h3>
-                <div className="org">{xp.organisation}</div>
-                <p>{xp.description}</p>
+                <div className="dates">{experience.dates}</div>
+                <h3>{experience.poste}</h3>
+                <div className="org">{experience.organisation}</div>
+                <p>{experience.description}</p>
               </div>
             );
           })}
@@ -71,6 +83,27 @@ export function Experience() {
               <div className="xp-frame-placeholder">Image à venir</div>
             )}
           </figure>
+
+          {active && active.stack.length > 0 && (
+            <div className="xp-stack" ref={frameRef}>
+              {active.stack.map((tech) => (
+                <span key={tech} className="tag">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+
+          {active && active.missions && active.missions.length > 0 && (
+            <div className="xp-missions">
+              <h4>Missions</h4>
+              <ul>
+                {active.missions.map((mission) => (
+                  <li key={mission}>{mission}</li>
+                ))}
+              </ul>
+            </div>
+          )}
         </div>
       </div>
     </section>

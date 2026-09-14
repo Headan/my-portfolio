@@ -24,9 +24,6 @@ export function Projects() {
                   </span>
                 ))}
               </div>
-              <a className="link" href={projet.lien}>
-                Voir l&apos;étude de cas →
-              </a>
             </div>
           </article>
         ))}

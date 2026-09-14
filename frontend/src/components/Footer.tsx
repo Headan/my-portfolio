@@ -1,3 +1,5 @@
+import { HiOutlineArrowTopRightOnSquare } from "react-icons/hi2";
+
 import { contact, profil } from "@/data/portfolio";
 
 export function Footer() {
@@ -8,10 +10,7 @@ export function Footer() {
         <div className="footer-links">
           <a href={`mailto:${contact.email}`}>{contact.email}</a>
           <a href={contact.linkedin} target="_blank" rel="noreferrer">
-            LinkedIn ↗
-          </a>
-          <a href={`tel:${contact.telephone.replace(/\s/g, "")}`}>
-            {contact.telephone}
+            LinkedIn <HiOutlineArrowTopRightOnSquare aria-hidden="true" />
           </a>
         </div>
       </div>

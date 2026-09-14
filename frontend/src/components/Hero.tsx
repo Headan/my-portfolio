@@ -1,5 +1,6 @@
 import { profil, contact } from "@/data/portfolio";
 import { Wave } from "./Wave";
+import profilLucien from "@/assets/images/profil-lucien.png";
 
 export function Hero() {
   return (
@@ -8,14 +9,14 @@ export function Hero() {
         <div className="role">
           {profil.role} · {profil.experience}
         </div>
-        <h1>{profil.titreAccroche}</h1>
+        <div className="hero-avatar">
+          <img src={profilLucien.src} alt={profil.nom} />
+        </div>
+        <h1>{profil.nom}</h1>
         <p className="lede">{profil.accroche}</p>
         <div className="hero-ctas">
           <a className="btn primary" href="#projets">
             Voir mes projets
-          </a>
-          <a className="btn ghost" href={contact.cv} download>
-            Télécharger mon CV
           </a>
         </div>
       </div>
