@@ -1,0 +1,421 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------
+   Portfolio — direction artistique "Vague" (maquette B).
+   Identité mono-thème navy / cream / vague, reprise du CV.
+   Toutes les couleurs sont explicites : la charte EST le design.
+----------------------------------------------------------------- */
+
+:root {
+  --navy-950: #0d1628;
+  --navy-900: #122036;
+  --navy-800: #1b2a44;
+  --navy-700: #26395a;
+  --navy-600: #3a4f78;
+  --blue-accent: #5b86e5;
+  --blue-accent-soft: #8fabee;
+  --cream-50: #f7f4ee;
+  --cream-100: #efeae0;
+  --cream-200: #e4ddcd;
+  --ink-900: #1c1d22;
+  --ink-600: #5a5f6b;
+  --ink-400: #8a8f9b;
+  --white: #ffffff;
+  --line-light: #e2ddd1;
+  --line-dark: #33436640;
+
+  --font-display: var(--font-sora), system-ui, sans-serif;
+  --font-body: var(--font-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cream-50);
+  color: var(--ink-900);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  text-wrap: balance;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* ---------------- éléments partagés ---------------- */
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.9rem;
+  background: linear-gradient(155deg, var(--navy-600), var(--navy-900));
+  color: #fff;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.02em;
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 12px 22px;
+  border-radius: 9px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn.primary {
+  background: var(--blue-accent);
+  color: #0d1628;
+}
+.btn.ghost {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #f2f0ea;
+}
+
+/* ---------------- hero + vague ---------------- */
+.hero {
+  background: radial-gradient(
+    140% 100% at 15% 0%,
+    var(--navy-700),
+    var(--navy-950) 70%
+  );
+  color: #f2f0ea;
+  position: relative;
+  padding: 72px clamp(20px, 5vw, 64px) 130px;
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 22px;
+  position: relative;
+  z-index: 2;
+}
+.hero h1 {
+  font-size: clamp(2.1rem, 5vw, 3.3rem);
+  line-height: 1.12;
+}
+.hero .role {
+  font-family: var(--font-mono);
+  color: var(--blue-accent-soft);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+}
+.hero .lede {
+  max-width: 58ch;
+  color: #c9cedd;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+.hero-ctas {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.wave {
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  line-height: 0;
+  z-index: 1;
+}
+.wave svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ---------------- bandeau compétences ---------------- */
+.skillstrip {
+  background: var(--navy-900);
+  padding: 16px 0;
+  overflow: hidden;
+}
+.skillstrip-track {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+.skillstrip .tag {
+  background: rgba(255, 255, 255, 0.06);
+  color: #dfe3ee;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* ---------------- sections ---------------- */
+.section {
+  padding: 86px clamp(20px, 5vw, 64px);
+}
+.section.tinted {
+  background: var(--cream-100);
+}
+.section-head {
+  max-width: 1180px;
+  margin: 0 auto 36px;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.section-head .eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--blue-accent);
+  letter-spacing: 0.03em;
+  display: block;
+  margin-bottom: 8px;
+}
+.section-head h2 {
+  font-size: 1.9rem;
+}
+
+/* ---------------- à propos ---------------- */
+.about {
+  display: grid;
+  grid-template-columns: 0.9fr 1.4fr;
+  gap: 44px;
+  max-width: 1180px;
+  margin: 0 auto;
+  align-items: center;
+}
+.about-card {
+  background: var(--navy-800);
+  color: #f2f0ea;
+  border-radius: 18px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-start;
+}
+.about-card .loc {
+  font-size: 0.82rem;
+  color: #c9cedd;
+  font-family: var(--font-mono);
+}
+.about-card h3 {
+  font-size: 1.2rem;
+}
+.about-card .lines {
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.about-card .lines a {
+  text-decoration: none;
+}
+.about p {
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--ink-600);
+  margin: 0;
+}
+.about p + p {
+  margin-top: 14px;
+}
+
+/* ---------------- projets ---------------- */
+.projects {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+.card {
+  background: var(--white);
+  border: 1px solid var(--line-light);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.card-top {
+  background: var(--navy-800);
+  height: 8px;
+}
+.card-body {
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+.card .client {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--blue-accent);
+}
+.card h3 {
+  font-size: 1.15rem;
+  line-height: 1.3;
+}
+.card p {
+  font-size: 0.9rem;
+  color: var(--ink-600);
+  line-height: 1.6;
+  margin: 0;
+}
+.card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+.card .tag {
+  background: var(--cream-100);
+  color: var(--navy-800);
+}
+.card .link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-800);
+  margin-top: auto;
+  text-decoration: none;
+}
+
+/* ---------------- expérience (timeline) ---------------- */
+.timeline {
+  max-width: 820px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 28px;
+}
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 1px;
+  background: var(--line-light);
+}
+.tl-item {
+  position: relative;
+  padding-bottom: 38px;
+}
+.tl-item:last-child {
+  padding-bottom: 0;
+}
+.tl-item::before {
+  content: "";
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  border: 2px solid var(--cream-50);
+}
+.tl-item .dates {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--ink-400);
+}
+.tl-item h3 {
+  font-size: 1.08rem;
+  margin-top: 4px;
+}
+.tl-item .org {
+  font-size: 0.86rem;
+  color: var(--blue-accent);
+  font-weight: 600;
+  margin-top: 2px;
+}
+.tl-item p {
+  font-size: 0.88rem;
+  color: var(--ink-600);
+  margin: 8px 0 0;
+  line-height: 1.6;
+  max-width: 60ch;
+}
+
+/* ---------------- footer ---------------- */
+.footer {
+  background: var(--navy-950);
+  color: #c9cedd;
+  position: relative;
+  padding: 90px clamp(20px, 5vw, 64px) 50px;
+}
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.footer h2 {
+  color: #f2f0ea;
+  font-size: 1.7rem;
+  max-width: 16ch;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+.footer-links a {
+  text-decoration: none;
+  color: #dfe3ee;
+}
+.footer-bottom {
+  max-width: 1180px;
+  margin: 50px auto 0;
+  font-size: 0.78rem;
+  color: #7d8399;
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 760px) {
+  .about {
+    grid-template-columns: 1fr;
+  }
+}
