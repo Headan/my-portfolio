@@ -1,5 +1,9 @@
-// Contenu du portfolio — centralisé ici pour garder les composants purement
-// présentation. Édite ce fichier pour mettre à jour le site.
+import type { StaticImageData } from "next/image";
+import edificeImg from "@/assets/images/edifice.png";
+import metaApiImg from "@/assets/images/meta-api.png";
+import sncfImg from "@/assets/images/sncf-reseau.png";
+import mmcreationImg from "@/assets/images/mmcreation.png";
+import franceTvImg from "@/assets/images/france-televiosion-publicite.png";
 
 export const profil = {
   nom: "Lucien Devars du Mayne",
@@ -78,28 +82,53 @@ export type Experience = {
   poste: string;
   organisation: string;
   description: string;
+  image: StaticImageData;
+  link?: string;
 };
 
 export const experiences: Experience[] = [
   {
     dates: "2023 — Aujourd'hui",
     poste: "Développeur Front-End",
-    organisation: "Edifice · CDI",
+    organisation: "Edifice | CDI",
     description:
       "Refonte et maintenance des applications, évolution de la librairie interne (Storybook), mise en place de tests unitaires (Vitest).",
+    image: edificeImg,
+    link: "https://edifice.io/",
   },
   {
     dates: "2020 — 2023",
     poste: "Développeur Full Stack",
-    organisation: "Meta API · CDI",
+    organisation: "Meta API | CDI",
     description:
       "Développement de fonctionnalités, refonte UI/UX et automatisations API sur une plateforme SaaS d'intégration.",
+    image: metaApiImg,
   },
   {
     dates: "2018 — 2020",
     poste: "Développeur Front-End",
-    organisation: "SNCF Réseau · Alternance",
+    organisation: "SNCF Réseau | Alternance",
     description:
       "Développement de l'outil OSRD : graphiques modulables et carte interactive de circulation des trains.",
+    image: sncfImg,
+    link: "https://osrd.fr/fr/",
+  },
+  {
+    dates: "2017 — 2018",
+    poste: "Développeur Front-End",
+    organisation: "MMCréation | Alternance",
+    description:
+      "A faire",
+    image: mmcreationImg,
+    link: "https://mmcreation.com/",
+  },
+  {
+    dates: "Janvier 2017 - Mars 2017",
+    poste: "Développeur Front-End",
+    organisation: "France Télévision Publicité | Stage",
+    description:
+      "A faire",
+    image: franceTvImg,
+    link: "https://www.francetvpub.fr/",
   },
 ];

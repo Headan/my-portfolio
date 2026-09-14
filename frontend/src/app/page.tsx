@@ -8,8 +8,10 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <SkillStrip />
+      <div className="landing">
+        <Hero />
+        <SkillStrip />
+      </div>
       <main>
         <About />
         <Projects />

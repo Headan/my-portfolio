@@ -5,7 +5,6 @@ export function Hero() {
   return (
     <header className="hero">
       <div className="hero-inner">
-        <div className="avatar">{profil.initiales}</div>
         <div className="role">
           {profil.role} · {profil.experience}
         </div>
