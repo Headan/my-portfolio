@@ -10,7 +10,7 @@ export const profil = {
   nom: "Lucien Devars du Mayne",
   initiales: "LD",
   role: "Développeur Front-End",
-  experience: "6 ans d'expérience",
+  experience: "7 ans d'expérience",
   accroche:
     "Spécialisé React & TypeScript, refonte UI/UX et tests unitaires — du développement de fonctionnalités à la maintenance, au sein d'équipes produit.",
 } as const;
@@ -18,7 +18,7 @@ export const profil = {
 export const contact = {
   email: "devarsdumayne.lucien@hotmail.com",
   ville: "Levallois-Perret, 92300",
-  linkedin: "https://www.linkedin.com/",
+  linkedin: "https://www.linkedin.com/in/lucien-devars-du-mayne-2711a112a/",
   cv: "/cv-lucien-devars-du-mayne.pdf",
 } as const;
 
