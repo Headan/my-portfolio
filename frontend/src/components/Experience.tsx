@@ -1,9 +1,11 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import { experiences } from "@/data/portfolio";
 
 export function Experience() {
+  const t = useTranslations("experience");
   // Toujours la première expérience sélectionnée au chargement de la page.
   const [selected, setSelected] = useState(0);
   const active = experiences[selected];
@@ -24,8 +26,8 @@ export function Experience() {
     <section id="experience" className="section">
       <div className="section-head">
         <div>
-          <span className="eyebrow">Parcours</span>
-          <h2>Expérience</h2>
+          <span className="eyebrow">{t("eyebrow")}</span>
+          <h2>{t("title")}</h2>
         </div>
       </div>
 
@@ -35,7 +37,7 @@ export function Experience() {
             const isSelected = index === selected;
             return (
               <div
-                key={experience.dates}
+                key={experience.id}
                 className={`tl-item${isSelected ? " is-selected" : ""}`}
                 role="button"
                 tabIndex={0}
@@ -48,10 +50,10 @@ export function Experience() {
                   }
                 }}
               >
-                <div className="dates">{experience.dates}</div>
-                <h3>{experience.poste}</h3>
-                <div className="org">{experience.organisation}</div>
-                <p>{experience.description}</p>
+                <div className="dates">{t(`items.${experience.id}.dates`)}</div>
+                <h3>{t(`items.${experience.id}.poste`)}</h3>
+                <div className="org">{t(`items.${experience.id}.organisation`)}</div>
+                <p>{t(`items.${experience.id}.description`)}</p>
               </div>
             );
           })}
@@ -64,7 +66,7 @@ export function Experience() {
                 <img
                   key={active.image.src}
                   src={active.image.src}
-                  alt={active.poste}
+                  alt={t(`items.${active.id}.poste`)}
                 />
                 {active.link && (
                   <div className="xp-overlay">
@@ -74,13 +76,13 @@ export function Experience() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Voir le projet
+                      {t("viewProject")}
                     </a>
                   </div>
                 )}
               </>
             ) : (
-              <div className="xp-frame-placeholder">Image à venir</div>
+              <div className="xp-frame-placeholder">{t("imagePlaceholder")}</div>
             )}
           </figure>
 
@@ -94,11 +96,11 @@ export function Experience() {
             </div>
           )}
 
-          {active && active.missions && active.missions.length > 0 && (
+          {active && (
             <div className="xp-missions">
-              <h4>Missions</h4>
+              <h4>{t("missionsTitle")}</h4>
               <ul>
-                {active.missions.map((mission) => (
+                {(t.raw(`items.${active.id}.missions`) as string[]).map((mission) => (
                   <li key={mission}>{mission}</li>
                 ))}
               </ul>

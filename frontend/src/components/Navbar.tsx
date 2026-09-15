@@ -2,10 +2,13 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { profil } from "@/data/portfolio";
 import lddmLogo from "@/assets/images/LDDM_logo_white.svg";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 
 export function Navbar() {
+  const t = useTranslations("nav");
   const [isCompact, setIsCompact] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [prevIsCompact, setPrevIsCompact] = useState(isCompact);
@@ -58,7 +61,7 @@ export function Navbar() {
         <button
           type="button"
           className={`navbar-burger${menuOpen ? " is-active" : ""}`}
-          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={menuOpen ? t("closeMenu") : t("openMenu")}
           aria-expanded={menuOpen}
           onClick={() => setMenuOpen((open) => !open)}
         >
@@ -74,13 +77,16 @@ export function Navbar() {
         >
           <li>
             <Link href="/" onClick={closeMenu}>
-              Home
+              {t("home")}
             </Link>
           </li>
           <li>
             <Link href="/contact" onClick={closeMenu}>
-              Me contacter
+              {t("contact")}
             </Link>
+          </li>
+          <li>
+            <LocaleSwitcher />
           </li>
         </ul>
       </div>

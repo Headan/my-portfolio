@@ -119,6 +119,35 @@ a {
   opacity: 1;
 }
 
+.locale-switcher {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+.locale-switcher-btn {
+  background: none;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #f2f0ea;
+  opacity: 0.7;
+  transition: opacity 0.15s ease, border-color 0.15s ease;
+}
+.locale-switcher-btn:hover {
+  opacity: 1;
+}
+.locale-switcher-btn.is-active {
+  opacity: 1;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+.locale-switcher-btn:disabled {
+  cursor: wait;
+}
+
 .navbar-burger {
   display: none;
   flex-direction: column;

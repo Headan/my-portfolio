@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "home": "Home",
+    "contact": "Contact me",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "localeSwitcher": {
+    "label": "Change language"
+  },
+  "profil": {
+    "role": "Front-End Developer",
+    "experience": "7 years of experience",
+    "accroche": "Specialized in React & TypeScript, UI/UX revamps and unit testing — from feature development to maintenance, within product teams."
+  },
+  "hero": {
+    "ctaProjects": "See my projects"
+  },
+  "about": {
+    "eyebrow": "About",
+    "title": "About me",
+    "paragraphs": [
+      "I've always been passionate about new technologies, and that curiosity naturally drew me to computer science — a passion confirmed from the very start of my studies. Since then, I've kept learning and honing my skills across the modern front-end ecosystem (React, TypeScript, JavaScript, HTML/CSS), through projects in both product-focused and more technical environments.",
+      "These 6 years of experience have let me touch every facet of the job: building features, revamping interfaces, setting up automated testing (Vitest, Storybook), and supporting product teams day to day. I'm now furthering my skills by learning Next.js, with the goal of extending my reach into back-end work."
+    ]
+  },
+  "projects": {
+    "eyebrow": "Selection",
+    "title": "Projects",
+    "items": {
+      "reactNative": {
+        "client": "Project_T - in progress",
+        "titre": "React Native application",
+        "description": "Mobile app built with React Native, a personal project currently in progress."
+      },
+      "rpgGame": {
+        "client": "Project_TL - in progress",
+        "titre": "RPG-style game development",
+        "description": "Development of an RPG-style game in collaboration with a freelance graphic designer, currently in progress."
+      }
+    }
+  },
+  "experience": {
+    "eyebrow": "Journey",
+    "title": "Experience",
+    "missionsTitle": "Missions",
+    "viewProject": "View project",
+    "imagePlaceholder": "Image coming soon",
+    "items": {
+      "edifice": {
+        "dates": "2023 — Present",
+        "poste": "Front-End Developer",
+        "organisation": "Edifice | Permanent contract",
+        "description": "Edifice builds digital educational platforms (ONE, NEO) to facilitate communication and learning.",
+        "missions": [
+          "Revamping and maintaining the platform's applications.",
+          "Evolving and maintaining an internal component library (Storybook).",
+          "Setting up and running front-end unit tests (Vitest).",
+          "Writing technical documentation across different projects.",
+          "Debugging and improving the platform."
+        ]
+      },
+      "metaApi": {
+        "dates": "2020 — 2023",
+        "poste": "Full Stack Developer",
+        "organisation": "Meta API | Permanent contract",
+        "description": "SaaS platform enabling API integration and making it easier to build automations between multiple applications.",
+        "missions": [
+          "Developing new features.",
+          "Redesigning and improving the platform's UI/UX.",
+          "Building API automations on the platform.",
+          "Debugging and improving the platform."
+        ]
+      },
+      "sncf": {
+        "dates": "2018 — 2020",
+        "poste": "Front-End Developer",
+        "organisation": "SNCF Réseau | Work-study",
+        "description": "Organization specialized in managing the French national rail network.",
+        "missions": [
+          "Developing the OSRD tool used to run operational studies.",
+          "Building modular charts.",
+          "Building an interactive map showing real-time train traffic."
+        ]
+      },
+      "mmcreation": {
+        "dates": "2017 — 2018",
+        "poste": "Front-End Developer",
+        "organisation": "MMCréation | Work-study",
+        "description": "Agency specialized in building websites for the hospitality industry.",
+        "missions": [
+          "Managing web domains and their associated hosting.",
+          "Working on site evolutions in close collaboration with the web designer: building modules, solving technical issues.",
+          "Working on client sites built with WordPress."
+        ]
+      },
+      "francetv": {
+        "dates": "January 2017 - March 2017",
+        "poste": "Front-End Developer",
+        "organisation": "France Télévision Publicité | Internship",
+        "description": "Front-end development internship at France Télévision Publicité.",
+        "missions": [
+          "Designing mockups and building a few front-end features for internal tools."
+        ]
+      },
+      "nolife": {
+        "dates": "May 2016 - July 2016",
+        "poste": "Front-End Developer",
+        "organisation": "Nolife | Internship",
+        "description": "Front-end development internship at the Nolife channel.",
+        "missions": [
+          "Building a smooth search system for a large video database of shows."
+        ]
+      }
+    }
+  },
+  "contact": {
+    "eyebrow": "Contact",
+    "title": "Contact me",
+    "lede": "A question, an opportunity or a project to discuss? Feel free to reach out directly.",
+    "linkedin": "LinkedIn",
+    "page": {
+      "title": "Contact — {nom}",
+      "description": "Contact me by email, phone or LinkedIn."
+    }
+  },
+  "footer": {
+    "cta": "Let's talk about your next project."
+  }
+}
