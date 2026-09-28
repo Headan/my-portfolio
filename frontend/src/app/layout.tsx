@@ -5,6 +5,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 import "./globals.css";
 import { profil } from "@/data/portfolio";
 import { Navbar } from "@/components/Navbar";
+import { Analytics } from "@vercel/analytics/next"
 
 const sora = Sora({
   variable: "--font-sora",
@@ -43,6 +44,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     >
       <body>
         <NextIntlClientProvider>
+          <Analytics />
           <Navbar />
           {children}
         </NextIntlClientProvider>
